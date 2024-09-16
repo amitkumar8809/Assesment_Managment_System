@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/amitkumar8809/Assesment_Managment_System.git
+          username: amitkumar8809
+          password: 
+          default-label: master
+server:
+  port: 8888
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
